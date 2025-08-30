@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:17.6
+    environment:
+      - POSTGRES_USER=sloth
+      - POSTGRES_PASSWORD=sloth%2=1
+      - POSTGRES_DB=learning
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    restart: always
+volumes:
+    pg-data:
